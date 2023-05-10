@@ -9,6 +9,7 @@ resource "aws_vpc" "my_vpc" {
   tags = {
     "Name" = "My_VPC"
     "Environment" = "Dev"
+    "Location" = "USA"
   }
 }
 
