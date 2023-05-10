@@ -4,9 +4,10 @@ provider "aws" {
 
 terraform {
     backend "s3" {
-      bucket = "myterraform.10.05.2023"
+      bucket = "myterraform.10.05.2023" #should be exist
       key = "terraform.tfstate"
       region = "us-west-2"
+      dynamodb_table = "myterraform.10.05.2023" #should be already exist
     }
 }
 
@@ -17,7 +18,7 @@ resource "aws_vpc" "my_vpc" {
   tags = {
     "Name" = "My_VPC"
     "Environment" = "Dev"
-    "Location" = "USA"
+    "Location" = "USA-2a"
   }
 }
 
