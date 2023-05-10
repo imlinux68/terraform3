@@ -5,13 +5,18 @@ provider "aws" {
 resource "aws_vpc" "my_vpc" {
   cidr_block = "10.0.0.0/16"
   instance_tenancy = "default"
-  
+
   tags = {
     "Name" = "My_VPC"
+    "Environment" = "Dev"
   }
 }
 
 
+
+output "vpc_cidr" {
+    value = "${aws_vpc.my_vpc.id}"
+}
 
 
 
