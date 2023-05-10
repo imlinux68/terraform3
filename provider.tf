@@ -12,6 +12,7 @@ terraform {
 }
 
 resource "aws_vpc" "my_vpc" {
+    count = 0
   cidr_block = "${var.vpc_cidr}"
   instance_tenancy = "default"
 
