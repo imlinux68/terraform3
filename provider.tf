@@ -12,7 +12,7 @@ terraform {
 }
 
 resource "aws_vpc" "my_vpc" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "${var.vpc_cidr}"
   instance_tenancy = "default"
 
   tags = {
@@ -21,7 +21,6 @@ resource "aws_vpc" "my_vpc" {
     "Location" = "USA-2a"
   }
 }
-
 
 
 output "vpc_cidr" {
